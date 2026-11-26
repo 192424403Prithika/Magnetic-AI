@@ -1,0 +1,11 @@
+{
+  "name": "magnetic-ai-capstone",
+  "version": "1.0.0",
+  "description": "MAGNETIC AI: Intelligent Magnetic Material Analysis Platform - Engineering Physics + Machine Learning Capstone",
+  "scripts": {
+    "dev:backend": "uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "test:python": "python -m pytest ./tests/test_physics.py ./tests/test_api.py -o pythonpath=. -v"
+  }
+}

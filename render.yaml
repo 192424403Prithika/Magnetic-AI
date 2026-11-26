@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: magnetic-ai
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: free
+    healthCheckPath: /api/materials
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 10000

@@ -1,0 +1,181 @@
+{
+  "best_model": "Gradient Boosting",
+  "classes": [
+    "diamagnetic",
+    "paramagnetic",
+    "ferromagnetic",
+    "antiferromagnetic",
+    "ferrimagnetic"
+  ],
+  "feature_columns": [
+    "susceptibility",
+    "temperature",
+    "saturation_magnetization",
+    "remanent_magnetization",
+    "coercivity",
+    "initial_permeability",
+    "loop_area"
+  ],
+  "feature_bounds": {
+    "susceptibility": {
+      "min": -0.0004062655986439,
+      "max": 300000.0,
+      "p01": -0.00039121404225384997,
+      "p99": 96756.45087650085,
+      "median": 0.0016079446710339
+    },
+    "temperature": {
+      "min": 77.27966169583823,
+      "max": 519.3502672215933,
+      "p01": 101.0752160055318,
+      "p99": 486.18134927572976,
+      "median": 298.16393624143404
+    },
+    "saturation_magnetization": {
+      "min": 103828.50694688287,
+      "max": 2161557.6559121283,
+      "p01": 107568.69892675485,
+      "p99": 2073524.677320539,
+      "median": 514976.2230668594
+    },
+    "remanent_magnetization": {
+      "min": 20719.875414503516,
+      "max": 1493752.1477639948,
+      "p01": 21396.114066950897,
+      "p99": 1470409.9165237474,
+      "median": 314326.125113282
+    },
+    "coercivity": {
+      "min": 0.434843406345278,
+      "max": 1719575.8316973862,
+      "p01": 0.5027128137500406,
+      "p99": 1596490.0281209045,
+      "median": 69.6464219192223
+    },
+    "initial_permeability": {
+      "min": 1.0862056929770413e-06,
+      "max": 0.0408008357619226,
+      "p01": 1.2444303534690762e-06,
+      "p99": 0.03250249077489931,
+      "median": 1.2585260198866473e-06
+    },
+    "loop_area": {
+      "min": 1.0,
+      "max": 17791750.890457053,
+      "p01": 1.0,
+      "p99": 15831251.460717771,
+      "median": 143.0329396091156
+    }
+  },
+  "model_comparison": {
+    "Random Forest": {
+      "cv_accuracy": 0.6939,
+      "cv_f1_macro": 0.6135,
+      "cv_precision_macro": 0.668,
+      "cv_recall_macro": 0.641
+    },
+    "Gradient Boosting": {
+      "cv_accuracy": 0.7776,
+      "cv_f1_macro": 0.6516,
+      "cv_precision_macro": 0.7008,
+      "cv_recall_macro": 0.6736
+    },
+    "Support Vector Machine (RBF)": {
+      "cv_accuracy": 0.3918,
+      "cv_f1_macro": 0.2634,
+      "cv_precision_macro": 0.269,
+      "cv_recall_macro": 0.3244
+    },
+    "Decision Tree": {
+      "cv_accuracy": 0.6591,
+      "cv_f1_macro": 0.6087,
+      "cv_precision_macro": 0.7331,
+      "cv_recall_macro": 0.6301
+    }
+  },
+  "overall_accuracy": 0.9971,
+  "overall_f1_macro": 0.9971,
+  "per_class_metrics": {
+    "diamagnetic": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 70
+    },
+    "paramagnetic": {
+      "precision": 1.0,
+      "recall": 0.9857,
+      "f1_score": 0.9928,
+      "support": 70
+    },
+    "ferromagnetic": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 70
+    },
+    "antiferromagnetic": {
+      "precision": 0.9859,
+      "recall": 1.0,
+      "f1_score": 0.9929,
+      "support": 70
+    },
+    "ferrimagnetic": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 70
+    }
+  },
+  "confusion_matrix": [
+    [
+      70,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      69,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      70,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      70,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      70
+    ]
+  ],
+  "feature_importances": {
+    "susceptibility": 0.3827,
+    "temperature": 0.0393,
+    "saturation_magnetization": 0.3488,
+    "remanent_magnetization": 0.0443,
+    "coercivity": 0.0037,
+    "initial_permeability": 0.1615,
+    "loop_area": 0.0023,
+    "saturation_magnetization_missing_flag": 0.0039,
+    "remanent_magnetization_missing_flag": 0.0031,
+    "coercivity_missing_flag": 0.0042,
+    "loop_area_missing_flag": 0.0063
+  },
+  "scientific_disclaimer": "Trained on a small reference + physically simulated dataset; probabilities are model scores, not validated scientific confidence. Verify all critical engineering designs with calibrated physical magnetometry (VSM/SQUID)."
+}
